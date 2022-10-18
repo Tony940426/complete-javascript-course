@@ -27,3 +27,11 @@ const restaurant = {
     },
   },
 };
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const[i, element] of menu.entries()) {
+  console.log(`${i}:${element}`)
+}
+
+console.log(new Set('hello'));
