@@ -7,5 +7,5 @@ function calcAge(birthYear) {
     return outPut
   }
 }
+calcAge(1989)
 const firstName = "Tony";
-const hello = calcAge(1989)
