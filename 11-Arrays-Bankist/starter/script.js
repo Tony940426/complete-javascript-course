@@ -4,6 +4,8 @@
 /////////////////////////////////////////////////
 // BANKIST APP
 
+console.log("connected");
+
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -73,4 +75,40 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+const displayMovements = function(movements) {
+  containerMovements.innerHTML = "";
+
+  movements.forEach((movement, i) => {
+    const type = movement > 0 ? `deposit` : `withdrawal`;
+
+    const html = `
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${i+1}</div>
+      <div class="movements__date">3 days ago</div>
+      <div class="movements__value">${movement}</div>
+  </div>`;
+  containerMovements.insertAdjacentHTML('afterbegin',html);
+  });
+}
+
+displayMovements(account1.movements)
 /////////////////////////////////////////////////
+Challenge
+//to see if dog if a dog is puppy or adult
+
+const checkDogs = function(dogs){
+  dogs.forEach((dog, i) => {
+    dog > 3 ? `Dog number ${i + 1} is a adult, and is ${dog} years old`: `Dog number ${i + 1} is a puppy, and is ${dog} years old`;
+  });
+}
+
+//Test Data 1 =
+// Julia's Data [3,5,2,12,7]
+const juliaOriginal = [3,5,2,12,7];
+const juliaNew = juliaOriginal.slice(1,-1);
+//Kate's Data [4,1,15,8,3]
+
+
+//Test Data 2 =
+//Julia's Data [9, 16, 6, 8, 3]
+//Kate Date [10, 5, 6, 1, 4]
